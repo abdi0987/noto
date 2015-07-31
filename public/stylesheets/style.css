@@ -27,3 +27,7 @@ a {
 .icon{
   cursor:pointer;
 }
+
+.clearAll{
+  padding-bottom:50px;
+}

@@ -27,7 +27,14 @@ router.route('/todo')
             res.json(todo)
         })
     })
-    
+    .delete(function(req,res){
+        Todo.remove({completed:true},function(err,todo){
+            if(err)
+                res.send(err);
+            
+            res.json({message:"Deleted Todo"})
+        })
+    })
     
 router.route('/todo/:todo_id')
     .get(function(req,res){
@@ -64,6 +71,7 @@ router.route('/todo/:todo_id')
             res.json({message:"Deleted Todo"})
         })
     })
+
 
 
 module.exports = router;

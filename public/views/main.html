@@ -18,6 +18,10 @@
         </li>
     </ul>
     <ul class="collection col s10 offset-s1">
+        <div ng-show='clearIcon'>
+            <li class='material-icons clearAll right icon ' ng-click='clearAll()' >done_all</li>
+            &nbsp;
+        </div>
         <li ng-mouseenter="showEl()" ng-mouseleave="hideEl" class="collection-item doneList " ng-repeat='todo in todos | filter:{completed:true}'>
             <a class='icon'><i class="material-icons done" ng-click='updateTodo(todo)'>done</i></a>
             {{todo.text}}
