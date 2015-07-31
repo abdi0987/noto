@@ -1,0 +1,27 @@
+<div class='row'>
+    <ul class="collection col s10 offset-s1" ng-submit="addTodo()">
+        <li class='collection-item'>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Enter task" id="task" type="text" class="validate" ng-model='text'>
+                    </div>
+                </div>
+            </form>
+        </li>
+    </ul>
+    <ul class="collection col s10 offset-s1">
+        <li ng-mouseenter="showEl()" ng-mouseleave="hideEl" class="collection-item  " ng-repeat='todo in todos| filter:{completed:false}'>
+            <a class='icon'><i class="material-icons done" ng-click='updateTodo(todo)'>done</i></a>
+            {{todo.text}}
+            <a class='icon'><i class="material-icons right x-mark" ng-click='deleteTodo(todo._id)'>highlight_off</i></a>
+        </li>
+    </ul>
+    <ul class="collection col s10 offset-s1">
+        <li ng-mouseenter="showEl()" ng-mouseleave="hideEl" class="collection-item doneList " ng-repeat='todo in todos | filter:{completed:true}'>
+            <a class='icon'><i class="material-icons done" ng-click='updateTodo(todo)'>done</i></a>
+            {{todo.text}}
+            <a class='icon'><i class="material-icons right x-mark" ng-click='deleteTodo(todo._id)'>highlight_off</i></a>
+        </li>
+    </ul>
+</div>

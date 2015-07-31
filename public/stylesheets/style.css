@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.x-mark{
+    display: none;
+}
+    
+.collection-item:hover .x-mark {
+    display: block;
+}
+
+.done{
+  margin-right:50px;
+}
+
+.doneList{
+  text-decoration: line-through;
+  color:#7f8c8d;
+}
+
+.icon{
+  cursor:pointer;
+}
